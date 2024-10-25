@@ -55,11 +55,13 @@ export default function DashBoard() {
 
     return (
         <div className="flex min-h-screen flex-col justify-center items-center px-6 py-12 lg:px-8 relative overflow-hidden bg-[#093545]">
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {movies.map((movie) => (
-                    <MovieCard key={movie._id} movie={movie} />
-                ))
-                }
+            <div className="w-full max-w-5xl">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {movies.map((movie) => (
+                        <MovieCard key={movie._id} movie={movie} />
+                    ))
+                    }
+                </div>
             </div>
             <Pagination
                 currentPage={currentPage}

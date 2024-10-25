@@ -11,7 +11,7 @@ export default function Pagination({ currentPage, totalPages, handlePageChange }
 
 
     return (
-        <div className="flex flex-col items-center mt-10 relative z-10">
+        <div className="flex flex-col items-center m-28 relative z-10">
             <div className="flex flex-wrap justify-center gap-2">
                 <button
                     className={`text-white font-bold px-4 py-2 rounded-l-md transition-colors duration-200 ${currentPage === 1

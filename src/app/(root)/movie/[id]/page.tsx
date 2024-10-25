@@ -106,7 +106,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
             if (!res.ok) {
                 throw new Error("Failed to submit the form");
             }
-            router.push(id === "new" ? "/movies" : "/");
+            router.push(id === "new" ? "/" : "/");
         } catch (error) {
             console.error(error);
         } finally {
