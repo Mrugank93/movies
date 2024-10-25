@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function isAuth(req: NextRequest) {
     try {
-        const token = localStorage.getItem('token');
+        const token = req.cookies.get("token")?.value;
         if (!token) {
             return null;
         }

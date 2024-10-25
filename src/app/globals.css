@@ -8,3 +8,140 @@ body {
     --tw-bg-opacity: 1;
     background-color: rgb(9 53 69 / var(--tw-bg-opacity))
 }
+
+
+body {
+  color: #fff; /* Assuming the text color is white, adjust as needed */
+}
+
+/* Heading One */
+.heading-one {
+  font-weight: 600; /* SemiBold */
+  font-size: 64px;
+  line-height: 80px;
+  letter-spacing: 0;
+}
+
+/* Heading Two */
+.heading-two {
+  font-weight: 600; /* SemiBold */
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0;
+}
+
+/* Heading Three */
+.heading-three {
+  font-weight: 600; /* SemiBold */
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0;
+}
+
+/* Heading Four */
+.heading-four {
+  font-weight: 700; /* Bold */
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+/* Heading Five */
+.heading-five {
+  font-weight: 700; /* Bold */
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+/* Heading Six */
+.heading-six {
+  font-weight: 700; /* Bold */
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+/* Body - Large */
+.body-large {
+  font-weight: 400; /* Regular */
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+/* Body - Regular */
+.body-regular {
+  font-weight: 700; /* Regular */
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+/* Body - Small */
+.body-small {
+  font-weight: 400; /* Regular */
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+/* Body - Extra Small */
+.body-extra-small {
+  font-weight: 400; /* Regular */
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+/* Caption */
+.caption {
+  font-weight: 400; /* Regular */
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.bg-primary{
+  background-color: #2BD17E;
+}
+
+.bg-error{
+  background-color: #EB5757;
+}
+
+.bg {
+  background-color: #093545;
+}
+
+.bg-input {
+  background-color:#224957;
+}
+
+.bg-card{
+  background-color: #092C39;
+
+}
+
+.input-field {
+  display: block;
+  width: 100%;
+  border-radius: 0.65rem; /* rounded-md */
+  background-color: #224957; /* Custom background color */
+  padding-top: 0.75rem; /* py-3 */
+  padding-bottom: 0.75rem; /* py-3 */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+  color: #ffffff; /* text-white */
+}
+
+.input-field::placeholder {
+  color: #d1d5db; /* placeholder:text-gray-300 */
+}
+
+.input-field:focus {
+  outline: none;
+  ring-width: 2px;
+  ring-inset: inset;
+  ring-color: #22c55e; /* focus:ring-green-400 */
+}

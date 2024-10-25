@@ -6,7 +6,7 @@ export default function Footer() {
         <Image
             src="/Vectors.svg"
             alt="Background Vectors"
-            className="w-full"
+            className="w-full relative bottom-0"
             layout="responsive"
             width={3000}
             height={1080}

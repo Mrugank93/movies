@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import Auth from "@/components/Auth";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700", "600"] });
 
@@ -19,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Auth>
+        <main>
           {children}
-        </Auth>
+        </main>
         <Footer />
       </body>
     </html >

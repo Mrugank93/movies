@@ -11,7 +11,7 @@ export default function EmptyDashboard() {
             </div>
             <div className="mt-6 md:mt-10 w-full md:w-auto">
                 <Link
-                    href={`/movie/new`}
+                    href={`/add`}
                     className="flex w-full md:w-auto justify-center rounded-md bg-[#2BD17E] px-6 py-3 text-sm font-bold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                 >
                     Add a new movie

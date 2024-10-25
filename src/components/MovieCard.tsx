@@ -17,7 +17,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
                 key={movie._id}
                 className="bg-[#092C39] rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 "
             >
-                <Link href={`/movie/${movie._id}`}
+                <Link href={`/edit/${movie._id}`}
                     className="relative  sm:h-60 hover:cursor-pointer"
                 >
                     <Image

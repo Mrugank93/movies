@@ -1,8 +1,10 @@
 "use client";
 
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { setCookie } from "cookies-next";
+
 
 export default function SignInForm() {
     const router = useRouter();
@@ -25,17 +27,20 @@ export default function SignInForm() {
             const { data, status } = await axios.post("/api/auth", formData);
 
             if (status === 200) {
-                localStorage.setItem("token", data.token);
-
-                const moviesResponse = await fetch(`/api/movies?page=1`);
-                const moviesData = await moviesResponse.json();
-
-                router.push(moviesData.success && moviesData.data.length ? "/" : "/dashboard");
+                setCookie("token", data.token, {
+                    path: "/",
+                    maxAge: 60 * 60 * 24,
+                    sameSite: "strict",
+                    secure: process.env.NODE_ENV === "production",
+                });
+                router.push("/");
             }
         } catch (err) {
             console.error("Login Error:", err);
             if (axios.isAxiosError(err)) {
-                setError(err.response?.data?.message || "An error occurred during login.");
+                setError(
+                    err.response?.data?.message || "An error occurred during login."
+                );
             } else {
                 setError("An error occurred during login.");
             }
@@ -54,7 +59,7 @@ export default function SignInForm() {
                         onChange={handleInputChange}
                         placeholder="Email"
                         required
-                        className="block w-full rounded-md bg-[#224957] py-3 px-4 text-white placeholder-gray-300 focus:ring-2 focus:ring-green-400"
+                        className="input-field"
                     />
                 </div>
                 <div>
@@ -66,25 +71,27 @@ export default function SignInForm() {
                         onChange={handleInputChange}
                         placeholder="Password"
                         required
-                        className="block w-full rounded-md bg-[#224957] py-3 px-4 text-white placeholder-gray-300 focus:ring-2 focus:ring-green-400"
+                        className="input-field"
                     />
                     {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
                 </div>
-                <div className="flex items-center justify-between">
-                    <label className="flex items-center text-sm text-white">
+                <div className="flex justify-center">
+                    <div className="flex items-center gap-2">
                         <input
                             id="remember-me"
                             name="remember-me"
                             type="checkbox"
-                            className="h-4 w-4 bg-[#224957] border-gray-300 rounded checked:bg-green-500"
+                            className="h-4 w-4 appearance-none bg-input checked:bg-green-500 focus:ring-green-400 rounded checked:border-transparent cursor-pointer"
                         />
-                        <span className="ml-2">Remember me</span>
-                    </label>
+                        <label htmlFor="remember-me" className="body-small">
+                            Remember me
+                        </label>
+                    </div>
                 </div>
                 <div>
                     <button
                         type="submit"
-                        className="w-full flex justify-center rounded-md bg-[#2BD17E] py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600"
+                        className="w-full flex justify-center rounded-md bg-primary py-3 body-regular shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600"
                     >
                         Login
                     </button>
