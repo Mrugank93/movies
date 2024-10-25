@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link';
 import React from 'react'
 
@@ -33,8 +34,12 @@ export default function Header() {
                     </svg>
                 </Link>
             </div>
-            <div
+            <button
                 className="text-[14px] sm:text-[16px] text-white font-bold mt-10 mb-6 flex items-center cursor-pointer"
+                onClick={() => {
+                    localStorage.removeItem("token")
+                    window.location.href = "/sign-in"
+                }}
             >
                 <span className="mx-3 hidden sm:inline">Logout</span>
                 <svg
@@ -56,7 +61,7 @@ export default function Header() {
                         </clipPath>
                     </defs>
                 </svg>
-            </div>
+            </button>
         </div></div>
     )
 }
