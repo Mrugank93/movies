@@ -1,4 +1,4 @@
-import SignInForm from '@/components/SignInForm'
+import SignUpForm from '@/components/SignUpFrom'
 import React from 'react'
 
 export default function page() {
@@ -9,7 +9,7 @@ export default function page() {
                     <h2 className="text-center text-[48px] sm:text-[64px] font-bold leading-9 tracking-tight text-white">
                         Sign Up
                     </h2>
-                    <SignInForm />
+                    <SignUpForm />
                 </div>
             </div>
         </div>
